@@ -6,14 +6,19 @@
     <title>MY BLOG</title>
     <link href="https://fonts.googleapis.com/css?family=Inconsolata&display=swap" rel="stylesheet">
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<link rel="stylesheet" href="{% static 'css/blog.css' %}">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css"
               integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
 
-    <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+
   </head>
   <body>
 <div class="page-header">
-  <h1><a href="/">Clever Programmer Blog</a></h1>
+
+{% if user.is_authenticated %}
+    <a href="{% url 'post_new' %}" class="top-menu"><i class="fas fa-plus fa-2x" style="color: white;"></i></a>
+{% endif %}
+  <h1><a href="{% url 'post_list' %}">Clever Programmer Blog</a></h1>
 </div>
 
 <div class="content container">
