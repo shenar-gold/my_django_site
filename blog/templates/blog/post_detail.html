@@ -28,10 +28,11 @@
           <div class="date">
             {{comment.created_date}}
           </div>
-          <strong>{{comment.author}}</strong><
+          <a href="{% url 'comment_remove' pk=comment.pk%}" class ='fas fa-trash-alt'></a>
+          <strong>{{comment.author}}</strong>
           <p>{{comment.text}}</p>
         </div>
         {% empty %}
-        <p>No comments yet...</p>  
+        <p>No comments yet...</p>
       {%endfor%}
 {% endblock %}
