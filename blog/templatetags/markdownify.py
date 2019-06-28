@@ -13,8 +13,8 @@ class HighlightRenderer(mistune.Renderer):
             return '\n<pre><code>%s</code></pre>\n' % \
                    mistune.escape(code)
         lexer = get_lexer_by_name(lang, stripall=True)
-        formatter = HtmlFormatter()
-        return highlight(code, lexer, formatter)
+        formattesr = HtmlFormatter()
+        return highlight(code, lexer, formattesr)
 
 
 @register.filter
